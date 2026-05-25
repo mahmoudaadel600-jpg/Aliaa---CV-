@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>علياء رأفت أحمد سليمان – معلمة لغة عربية</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#C9A84C; --gold-light:#F0D080; --gold-dim:#8B6F2A;
+  --dark:#08090D; --dark2:#0F1219; --dark3:#161C26; --dark4:#1C2333;
+  --text:#EEEEF0; --text-muted:#8A96A8; --text-dim:#5A6478;
+  --red:#6366F1; --yellow:#FFD700; --green:#2ECC8A; --orange:#FF8C00; --pink2:#FF69B4;
+  --blue:#4A9EFF; --purple:#9F6EFF; --amber:#F7B731;
+  --line:rgba(201,168,76,0.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'Tajawal',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.en{direction:ltr;text-align:left}
+body.ar{direction:rtl;text-align:right}
+
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite alternate ease-in-out}
+@keyframes twinkle{0%{opacity:.1;transform:scale(.8)}100%{opacity:.8;transform:scale(1.3)}}
+
+.ambient{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(120px);opacity:.07}
+.amb-gold{width:600px;height:600px;background:var(--gold);top:-200px;right:-200px;animation:drift 12s ease-in-out infinite alternate}
+.amb-red{width:500px;height:500px;background:#7C3AED;bottom:-150px;left:-150px;animation:drift 16s 4s ease-in-out infinite alternate}
+.amb-pink{width:400px;height:400px;background:#FF69B4;top:40%;left:30%;animation:drift 20s 2s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(60px,40px) scale(1.15)}}
+
+.lang-bar{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;justify-content:center;align-items:center;gap:10px;
+  padding:9px 20px;
+  background:rgba(8,9,13,0.94);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(99,102,241,0.2);
+}
+.lang-btn{
+  display:flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,#6366F1,#8B5CF6,#A78BFA);
+  background-size:200% 200%;
+  animation:shimmer 4s ease-in-out infinite;
+  color:#fff;border:none;padding:8px 22px;border-radius:50px;
+  font-family:'Tajawal',sans-serif;font-size:13.5px;font-weight:800;
+  cursor:pointer;transition:all .3s;
+  box-shadow:0 0 24px rgba(99,102,241,.55),0 4px 16px rgba(0,0,0,.5);
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
+}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.lang-btn:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(99,102,241,.75),0 8px 24px rgba(0,0,0,.5)}
+.lang-btn svg{width:15px;height:15px;flex-shrink:0}
+.print-btn{
+  display:flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,.1);
+  color:var(--text-muted);padding:8px 16px;border-radius:50px;
+  font-family:'Tajawal',sans-serif;font-size:13px;font-weight:600;
+  cursor:pointer;transition:all .25s;
+}
+.print-btn:hover{background:rgba(255,255,255,.08);color:var(--text);border-color:rgba(255,255,255,.25)}
+.print-btn svg{width:13px;height:13px;flex-shrink:0}
+
+.cv-wrapper{max-width:1000px;margin:72px auto 60px;padding:0 16px;position:relative;z-index:1}
+
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#080A14 0%,#0D0F1E 60%,#0A0C18 100%);
+  border:1px solid rgba(99,102,241,.25);border-radius:24px;
+  padding:44px 50px 40px;margin-bottom:14px;
+  box-shadow:0 32px 80px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.05);
+  animation:heroIn .8s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes heroIn{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+.hero::before{content:'';position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(99,102,241,.018) 80px,rgba(99,102,241,.018) 81px);
+  pointer-events:none}
+.hero-glow{position:absolute;top:-80px;right:-80px;width:320px;height:320px;
+  background:radial-gradient(circle,rgba(99,102,241,.14),transparent 65%);border-radius:50%;pointer-events:none}
+.hero-glow2{position:absolute;bottom:-80px;left:-60px;width:260px;height:260px;
+  background:radial-gradient(circle,rgba(6,182,212,.08),transparent 65%);border-radius:50%;pointer-events:none}
+
+.hero-inner{display:flex;align-items:center;gap:34px;position:relative;z-index:1}
+body.en .hero-inner{flex-direction:row}
+body.ar .hero-inner{flex-direction:row-reverse}
+
+.avatar-wrap{flex-shrink:0;position:relative}
+.avatar-ring{
+  width:128px;height:128px;border-radius:50%;padding:3px;
+  background:conic-gradient(#6366F1,#8B5CF6,#06B6D4,#10B981,#F59E0B,#6366F1);
+  box-shadow:0 0 0 1px rgba(99,102,241,.3),0 0 45px rgba(139,92,246,.5),0 12px 40px rgba(0,0,0,.7);
+  animation:spinRing 10s linear infinite;
+}
+@keyframes spinRing{to{transform:rotate(360deg)}}
+.avatar-inner{
+  width:100%;height:100%;border-radius:50%;
+  overflow:hidden;
+  background:linear-gradient(135deg,#2A1A1A,#1A1010);
+  display:flex;align-items:center;justify-content:center;
+  animation:spinRingCounter 10s linear infinite;
+  position:relative;
+}
+@keyframes spinRingCounter{to{transform:rotate(-360deg)}}
+.avatar-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.avatar-initials{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;
+  background:linear-gradient(135deg,#FF8C00,#FFD700);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text}
+.avatar-badge{
+  position:absolute;bottom:5px;right:5px;
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green),#1aad6a);
+  border:2px solid var(--dark);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;
+  box-shadow:0 2px 10px rgba(46,204,138,.6);
+  animation:spinRingCounter 10s linear infinite;
+  z-index:5;
+}
+
+.hero-text{flex:1;min-width:0}
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;
+  background:linear-gradient(135deg,#fff 0%,#FFD700 40%,#FF8C00 70%,#fff 100%);
+  background-size:200% 200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.15;margin-bottom:8px;
+  animation:nameShimmer 5s ease-in-out infinite;
+}
+@keyframes nameShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-title{
+  font-size:clamp(.9rem,2.2vw,1.05rem);font-weight:700;
+  color:#FF8C00;letter-spacing:1px;margin-bottom:6px;
+  display:flex;align-items:center;gap:8px;
+}
+.hero-title-dot{width:7px;height:7px;border-radius:50%;
+  background:linear-gradient(135deg,#6366F1,#8B5CF6);flex-shrink:0;
+  box-shadow:0 0 10px #8B5CF6;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.5}}
+.hero-bio{font-size:clamp(.8rem,1.8vw,.92rem);color:var(--text-muted);line-height:1.85;max-width:520px;margin-top:10px}
+
+.contact-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.contact-chip{
+  display:flex;align-items:center;gap:7px;
+  background:rgba(255,140,0,.06);border:1px solid rgba(255,140,0,.2);
+  padding:7px 14px;border-radius:50px;
+  font-size:clamp(.7rem,1.8vw,.8rem);color:var(--text-muted);
+  text-decoration:none;transition:all .25s;white-space:nowrap;
+}
+.contact-chip:hover{background:rgba(255,140,0,.14);color:#FFD700;border-color:rgba(255,140,0,.5);
+  transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.contact-chip svg{width:12px;height:12px;opacity:.65;flex-shrink:0}
+.phone-ltr{direction:ltr;unicode-bidi:plaintext}
+
+.tabs-container{animation:heroIn 1s .3s cubic-bezier(.22,1,.36,1) both}
+.tabs-nav{display:flex;flex-wrap:wrap;gap:6px;padding:0 2px;position:relative;z-index:10;}
+.tab-btn{
+  position:relative;display:flex;align-items:center;gap:8px;
+  padding:14px 22px;border:none;border-radius:14px 14px 0 0;
+  font-family:'Tajawal',sans-serif;font-size:.9rem;font-weight:800;
+  cursor:pointer;outline:none;touch-action:manipulation;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+  transform-style:preserve-3d;will-change:transform;letter-spacing:.3px;
+}
+.tab-btn:not(.active){
+  color:var(--text-muted);border:1px solid rgba(255,255,255,.12);border-bottom:none;
+  transform:translateY(6px) perspective(400px) rotateX(8deg);letter-spacing:.5px;position:relative;
+}
+.tab-btn:not(.active)::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;opacity:.85;}
+.tab-btn:not(.active):hover{color:var(--text);transform:translateY(2px) perspective(400px) rotateX(2deg);}
+
+.tab-btn[data-tab="experience"]:not(.active){background:linear-gradient(180deg,rgba(49,46,129,.35) 0%,rgba(30,27,75,.55) 60%,rgba(12,10,30,.85) 100%);border-color:rgba(99,102,241,.4);box-shadow:0 8px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(165,180,252,.12),0 0 18px rgba(99,102,241,.1);}
+.tab-btn[data-tab="experience"]:not(.active)::before{background:linear-gradient(90deg,#4F46E5,#818CF8)}
+.tab-btn[data-tab="experience"]:not(.active):hover{background:linear-gradient(180deg,rgba(99,102,241,.45) 0%,rgba(49,46,129,.6) 50%,rgba(12,10,30,.85) 100%);border-color:rgba(99,102,241,.65);color:#C7D2FE;}
+
+.tab-btn[data-tab="skills"]:not(.active){background:linear-gradient(180deg,rgba(120,80,0,.32) 0%,rgba(80,52,0,.5) 60%,rgba(20,14,0,.85) 100%);border-color:rgba(245,158,11,.38);box-shadow:0 8px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(252,211,77,.1);}
+.tab-btn[data-tab="skills"]:not(.active)::before{background:linear-gradient(90deg,#D97706,#FCD34D)}
+.tab-btn[data-tab="skills"]:not(.active):hover{color:#FDE68A;}
+
+.tab-btn[data-tab="courses"]:not(.active){background:linear-gradient(180deg,rgba(6,78,59,.32) 0%,rgba(4,50,38,.5) 60%,rgba(0,14,10,.85) 100%);border-color:rgba(16,185,129,.38);box-shadow:0 8px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(110,231,183,.1);}
+.tab-btn[data-tab="courses"]:not(.active)::before{background:linear-gradient(90deg,#059669,#6EE7B7)}
+.tab-btn[data-tab="courses"]:not(.active):hover{color:#A7F3D0;}
+
+.tab-btn[data-tab="education"]:not(.active){background:linear-gradient(180deg,rgba(124,45,18,.3) 0%,rgba(80,28,10,.48) 60%,rgba(20,8,2,.85) 100%);border-color:rgba(249,115,22,.35);box-shadow:0 8px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(253,186,116,.1);}
+.tab-btn[data-tab="education"]:not(.active)::before{background:linear-gradient(90deg,#EA580C,#FED7AA)}
+.tab-btn[data-tab="education"]:not(.active):hover{color:#FDBA74;}
+
+.tab-btn[data-tab="extra"]:not(.active){background:linear-gradient(180deg,rgba(136,19,55,.3) 0%,rgba(88,12,36,.48) 60%,rgba(22,3,10,.85) 100%);border-color:rgba(244,63,94,.35);box-shadow:0 8px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(253,164,175,.1);}
+.tab-btn[data-tab="extra"]:not(.active)::before{background:linear-gradient(90deg,#E11D48,#FDA4AF)}
+.tab-btn[data-tab="extra"]:not(.active):hover{color:#FCA5A5;}
+
+.tab-btn.active{transform:translateY(0) perspective(300px) rotateX(0);z-index:20;border-bottom:none!important}
+.tab-btn[data-tab="experience"].active{background:linear-gradient(180deg,#0A0A2A,#08081E);color:#818CF8;border:1px solid rgba(99,102,241,.5);border-bottom:none;box-shadow:0 -5px 0 #6366F1 inset,0 -14px 32px rgba(99,102,241,.25) inset,0 -6px 50px rgba(99,102,241,.35);text-shadow:0 0 20px rgba(99,102,241,.6);}
+.tab-btn[data-tab="skills"].active{background:linear-gradient(180deg,#2A2200,#1E1800);color:#FFE566;border:1px solid rgba(255,215,0,.5);border-bottom:none;box-shadow:0 -5px 0 #FFD700 inset,0 -14px 32px rgba(255,215,0,.25) inset,0 -6px 50px rgba(255,215,0,.35);text-shadow:0 0 20px rgba(255,215,0,.6);}
+.tab-btn[data-tab="courses"].active{background:linear-gradient(180deg,#0A2214,#081A0F);color:#6EE7B7;border:1px solid rgba(46,204,138,.5);border-bottom:none;box-shadow:0 -5px 0 #2ECC8A inset,0 -14px 32px rgba(46,204,138,.25) inset,0 -6px 50px rgba(46,204,138,.35);text-shadow:0 0 20px rgba(46,204,138,.6);}
+.tab-btn[data-tab="education"].active{background:linear-gradient(180deg,#2A1200,#1E0D00);color:#FDBA74;border:1px solid rgba(249,115,22,.5);border-bottom:none;box-shadow:0 -5px 0 #F97316 inset,0 -14px 32px rgba(249,115,22,.25) inset,0 -6px 50px rgba(249,115,22,.35);text-shadow:0 0 20px rgba(249,115,22,.6);}
+.tab-btn[data-tab="extra"].active{background:linear-gradient(180deg,#2A0A14,#1E0810);color:#FCA5A5;border:1px solid rgba(244,63,94,.5);border-bottom:none;box-shadow:0 -5px 0 #F43F5E inset,0 -14px 32px rgba(244,63,94,.25) inset,0 -6px 50px rgba(244,63,94,.35);text-shadow:0 0 20px rgba(244,63,94,.6);}
+
+.tabs-body{
+  background:linear-gradient(145deg,#080A14,#0A0D1A,#06080F);
+  border:1px solid rgba(99,102,241,.22);border-radius:0 16px 16px 16px;border-top:none;
+  box-shadow:0 24px 60px rgba(0,0,0,.7),inset 0 0 100px rgba(6,182,212,.015);
+  position:relative;overflow:hidden;
+}
+.tabs-body::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse at 15% 50%,rgba(99,102,241,.04),transparent 55%),
+  radial-gradient(ellipse at 85% 20%,rgba(139,92,246,.03),transparent 50%);pointer-events:none}
+
+.tab-panel{display:none;padding:32px 36px;animation:fadePanel .4s ease both}
+.tab-panel.active{display:block}
+@keyframes fadePanel{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.sec-title{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:900;letter-spacing:.5px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.sec-title.c-red   {color:#818CF8}
+.sec-title.c-yellow{color:#FFE566}
+.sec-title.c-green {color:#6EE7B7}
+.sec-title.c-orange{color:#FDBA74}
+.sec-title.c-pink  {color:#FFB3D1}
+
+.exp-item{margin-bottom:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.05)}
+.exp-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.exp-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.exp-school-name{font-size:1rem;font-weight:800;color:var(--text);flex:1;display:flex;align-items:center;gap:10px}
+.exp-school-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.exp-date{background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(99,102,241,.06));border:1px solid rgba(99,102,241,.3);color:#818CF8;font-size:.7rem;font-weight:800;padding:4px 12px;border-radius:50px;white-space:nowrap;flex-shrink:0;letter-spacing:.5px;}
+.exp-loc{font-size:.77rem;color:var(--text-dim);margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.exp-loc svg{opacity:.5;flex-shrink:0}
+.exp-bullets{list-style:none}
+.exp-bullets li{font-size:.84rem;color:var(--text-muted);line-height:1.8;padding:3px 0;padding-inline-start:18px;position:relative}
+.exp-bullets li::before{content:'▸';position:absolute;inset-inline-start:0;color:#818CF8;font-size:.7rem;top:5px;opacity:.7}
+
+.skill-section{margin-bottom:30px}
+.skill-section:last-child{margin-bottom:0}
+.skill-cat-head{display:flex;align-items:center;gap:10px;font-size:.8rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.skill-cat-pip{width:28px;height:5px;border-radius:5px;flex-shrink:0}
+.badges-wrap{display:flex;flex-wrap:wrap;gap:9px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-size:.82rem;font-weight:700;transition:all .25s;cursor:default;border:1px solid transparent;box-shadow:0 4px 14px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08);position:relative;overflow:hidden;}
+.badge::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.06),transparent);pointer-events:none}
+.badge:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 10px 28px rgba(0,0,0,.5)}
+.br{background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(99,102,241,.08));border-color:rgba(99,102,241,.32);color:#A5B4FC}
+.by{background:linear-gradient(135deg,rgba(255,215,0,.2),rgba(255,215,0,.07));border-color:rgba(255,215,0,.32);color:#FFE566}
+.bg{background:linear-gradient(135deg,rgba(46,204,138,.18),rgba(46,204,138,.07));border-color:rgba(46,204,138,.3);color:#6EE7B7}
+.bo{background:linear-gradient(135deg,rgba(255,140,0,.2),rgba(255,140,0,.07));border-color:rgba(255,140,0,.32);color:#FFB347}
+.bpk{background:linear-gradient(135deg,rgba(255,105,180,.18),rgba(255,105,180,.07));border-color:rgba(255,105,180,.3);color:#FFB3D1}
+
+.courses-list{display:flex;flex-direction:column;gap:9px}
+.c-item{display:flex;align-items:flex-start;gap:14px;background:rgba(46,204,138,.03);border:1px solid rgba(46,204,138,.1);border-radius:14px;padding:14px 18px;transition:all .25s;position:relative;overflow:hidden;cursor:default;}
+.c-item::after{content:'';position:absolute;inset-inline-start:0;top:0;width:3px;height:100%;background:linear-gradient(180deg,#2ECC8A,#1aad6a);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.c-item:hover{background:rgba(46,204,138,.07);border-color:rgba(46,204,138,.22);transform:translateX(-3px)}
+.c-item:hover::after{transform:scaleY(1)}
+body.en .c-item:hover{transform:translateX(3px)}
+body.en .c-item::after{inset-inline-start:auto;inset-inline-end:0}
+.c-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#1aad6a,#2ECC8A);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;color:#04201A;box-shadow:0 3px 12px rgba(46,204,138,.45);margin-top:1px;}
+.c-body{flex:1;min-width:0}
+.c-name{font-size:.9rem;font-weight:800;color:var(--text);line-height:1.45;margin-bottom:3px}
+.c-org{font-size:.73rem;color:var(--text-dim);display:flex;align-items:center;gap:4px}
+.c-org::before{content:'🏛';font-size:.68rem}
+
+.edu-card{background:linear-gradient(145deg,rgba(255,140,0,.07),rgba(255,140,0,.02));border:1px solid rgba(255,140,0,.2);border-radius:16px;padding:26px 28px;margin-bottom:18px;position:relative;overflow:hidden;transition:all .3s;}
+.edu-card:hover{transform:translateY(-3px);border-color:rgba(255,140,0,.38);box-shadow:0 12px 36px rgba(255,140,0,.12)}
+.edu-card::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle,rgba(255,140,0,.08),transparent 65%);pointer-events:none}
+.edu-deg{font-size:1.15rem;font-weight:900;color:var(--text);margin-bottom:7px}
+.edu-uni{font-size:.86rem;color:var(--text-muted);margin-bottom:13px}
+.edu-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(74,158,255,.1);border:1px solid rgba(74,158,255,.25);color:var(--blue);font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:20px;}
+
+.lang-block{margin-bottom:28px}
+.lang-row{margin-bottom:18px}
+.lang-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.lang-name{font-size:.95rem;font-weight:800;color:var(--text)}
+.lang-lvl{font-size:.74rem;font-weight:800;padding:4px 12px;border-radius:20px}
+.lvl-native{background:rgba(99,102,241,.14);border:1px solid rgba(99,102,241,.3);color:#818CF8}
+.lvl-good{background:rgba(46,204,138,.12);border:1px solid rgba(46,204,138,.3);color:#6EE7B7}
+.lang-track{height:10px;background:rgba(255,255,255,.06);border-radius:10px;overflow:hidden;position:relative}
+.lang-fill{height:100%;border-radius:10px;position:relative;overflow:hidden}
+.lang-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:sweep 2.5s ease-in-out infinite}
+@keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
+.lf-red{background:linear-gradient(90deg,#3730A3,#6366F1,#818CF8)}
+.lf-green{background:linear-gradient(90deg,#065f46,#2ECC8A,#6EE7B7)}
+
+.interests-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.interest-card{background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.15);border-radius:12px;padding:14px 12px;text-align:center;transition:all .3s;}
+.interest-card:hover{background:rgba(255,105,180,.1);border-color:rgba(255,105,180,.32);transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,105,180,.12)}
+.interest-icon{font-size:1.7rem;margin-bottom:6px;display:block}
+.interest-name{font-size:.78rem;font-weight:700;color:var(--text-muted)}
+
+.cv-footer{text-align:center;padding:28px 0 16px;font-size:.7rem;color:var(--text-dim);letter-spacing:3px;text-transform:uppercase}
+.cv-footer span{color:#8B5CF6}
+
+.ar-text{display:inline}.en-text{display:none}
+body.en .ar-text{display:none}body.en .en-text{display:inline}
+
+@media(max-width:820px){.cv-wrapper{margin-top:66px;padding:0 12px}.hero{padding:28px 24px 28px}.tab-panel{padding:24px 20px}.interests-grid{grid-template-columns:repeat(2,1fr)}.tabs-nav{gap:5px;flex-wrap:wrap}.tab-btn{padding:11px 14px;font-size:.82rem}.tab-icon{font-size:1.1rem}.tab-label{font-size:.78rem;display:inline!important}}
+@media(max-width:540px){.hero-inner{flex-direction:column!important;text-align:center;gap:18px}.hero-bio{max-width:100%}.contact-row{justify-content:center}.tabs-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;width:100%;}.tab-btn{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px;padding:10px 4px 9px!important;min-width:0;width:100%;border-radius:10px 10px 0 0;font-size:.68rem!important;}.tab-icon{font-size:1.35rem!important;line-height:1}.tab-label{display:block!important;font-size:.6rem!important;font-weight:800;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;line-height:1.2;}.tab-panel{padding:18px 14px}.interests-grid{grid-template-columns:repeat(2,1fr)}}
+@media print{#particles,.ambient,.lang-bar{display:none!important}body{background:#fff!important;color:#111!important}.cv-wrapper{margin-top:10px!important}.hero,.tabs-body,.edu-card,.c-item{background:#f7f7f7!important;border-color:#ddd!important;box-shadow:none!important}.hero-name{-webkit-text-fill-color:#111!important}.tab-panel{display:block!important}.tabs-nav{display:none!important}.tabs-body{border-radius:8px!important}}
+</style>
+</head>
+<body class="ar">
+
+<div id="particles"></div>
+<div class="ambient amb-gold"></div>
+<div class="ambient amb-red"></div>
+<div class="ambient amb-pink"></div>
+
+<div class="lang-bar">
+  <button class="lang-btn" onclick="toggleLang()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/><path d="M2 12h20"/></svg>
+    <span class="ar-text">Switch to English</span><span class="en-text">التبديل إلى العربية</span>
+  </button>
+  <button class="print-btn" onclick="window.print()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    <span class="ar-text">طباعة / PDF</span><span class="en-text">Print / PDF</span>
+  </button>
+</div>
+
+<div class="cv-wrapper">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <div class="avatar-ring">
+        <div class="avatar-inner" id="avatarInner">
+          <img src="data:image/jpeg;base64,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" alt="علياء رأفت" style="width:100%;height:100%;object-fit:cover;border-radius:50%">
+          <div class="avatar-badge">✓</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-name">
+        <span class="ar-text">علياء رأفت أحمد سليمان</span>
+        <span class="en-text">Aliaa Rafaat Ahmed Soliman</span>
+      </div>
+      <div class="hero-title">
+        <span class="hero-title-dot"></span>
+        <span class="ar-text">معلمة لغة عربية ودراسات إسلامية – الإمارات العربية المتحدة</span>
+        <span class="en-text">Arabic & Islamic Studies Teacher | UAE</span>
+      </div>
+      <div class="hero-bio">
+        <span class="ar-text">معلمة لغة عربية ودراسات إسلامية ومدربة معتمدة، تمتلك خبرة واسعة في التعليم وتصميم المناهج وتدريب المعلمين. متخصصة في أساليب التدريس والتعليم الشامل ودمج الذكاء الاصطناعي في التعلم. حاصلة على ترخيص تعليمي انتقالي في الإمارات العربية المتحدة. سجل مثبت في تحسين أداء الطلاب وتطوير الحلول التعليمية المبتكرة.</span>
+        <span class="en-text">Arabic Language Teacher, Islamic Studies educator & Certified Trainer with extensive experience in education, curriculum design, and teacher training. Specialized in Teaching Methods, Inclusive Education, and AI integration in learning. Holds a Transitional Teaching License in the UAE. Proven record in improving student performance through innovative educational solutions.</span>
+      </div>
+      <div class="contact-row">
+        <a class="contact-chip" href="tel:+971566757597">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.13 1 .38 1.97.72 2.91a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.94.34 1.91.59 2.91.72A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="phone-ltr">+971 56 675 7597</span>
+        </a>
+        <a class="contact-chip" href="mailto:lollasoliman43@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          lollasoliman43@gmail.com
+        </a>
+        <a class="contact-chip" href="https://www.linkedin.com/in/aliaa-soliman-7b9511282" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <span class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="ar-text">🇦🇪 الإمارات العربية المتحدة</span>
+          <span class="en-text">🇦🇪 United Arab Emirates</span>
+        </span>
+        <span class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="ar-text">🇪🇬 مصرية</span>
+          <span class="en-text">🇪🇬 Egyptian</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-container">
+  <div class="tabs-nav">
+    <button class="tab-btn active" data-tab="experience" onclick="switchTab('experience')">
+      <span class="tab-icon">💼</span>
+      <span class="tab-label"><span class="ar-text">الخبرة</span><span class="en-text">Experience</span></span>
+    </button>
+    <button class="tab-btn" data-tab="skills" onclick="switchTab('skills')">
+      <span class="tab-icon">⚡</span>
+      <span class="tab-label"><span class="ar-text">المهارات</span><span class="en-text">Skills</span></span>
+    </button>
+    <button class="tab-btn" data-tab="courses" onclick="switchTab('courses')">
+      <span class="tab-icon">🏅</span>
+      <span class="tab-label"><span class="ar-text">الشهادات</span><span class="en-text">Certificates</span></span>
+    </button>
+    <button class="tab-btn" data-tab="education" onclick="switchTab('education')">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label"><span class="ar-text">المؤهلات</span><span class="en-text">Education</span></span>
+    </button>
+    <button class="tab-btn" data-tab="extra" onclick="switchTab('extra')">
+      <span class="tab-icon">🌍</span>
+      <span class="tab-label"><span class="ar-text">اللغات</span><span class="en-text">Languages</span></span>
+    </button>
+  </div>
+
+  <div class="tabs-body" id="tabsBody" data-active="experience">
+
+    <!-- ══ EXPERIENCE ══ -->
+    <div class="tab-panel active" id="panel-experience">
+      <div class="sec-title c-red">
+        <span>💼</span>
+        <span class="ar-text">الخبرة المهنية</span><span class="en-text">Professional Experience</span>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div class="exp-school-name">
+            <div class="exp-school-dot" style="background:linear-gradient(135deg,#6366F1,#8B5CF6);box-shadow:0 0 10px #6366F1"></div>
+            <span class="ar-text">معلمة لغة عربية لغير الناطقين بها</span>
+            <span class="en-text">Arabic Language Teacher for Non-Native Speakers</span>
+          </div>
+          <span class="exp-date">2025 – <span class="ar-text">حتى الآن</span><span class="en-text">Present</span></span>
+        </div>
+        <div class="exp-loc">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="ar-text">مدرسة دلهي الخاصة – رأس الخيمة، الإمارات</span>
+          <span class="en-text">Delhi Private School – Ras Al Khaimah, UAE</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><span class="ar-text">تدريس اللغة العربية كلغة ثانية لغير الناطقين بها في المرحلة الابتدائية</span><span class="en-text">Teaching Arabic as a Second Language to non-native speakers across primary grades</span></li>
+          <li><span class="ar-text">تصميم دروس مبسطة ومتدرجة تركز على مهارات الاستماع والتحدث والقراءة والكتابة</span><span class="en-text">Designing simplified, level-based lessons focusing on listening, speaking, reading, and writing skills</span></li>
+          <li><span class="ar-text">تطبيق استراتيجيات التعليم المتمايز لتلبية المستويات اللغوية المتنوعة</span><span class="en-text">Applying differentiated instruction strategies to meet diverse linguistic levels</span></li>
+          <li><span class="ar-text">استخدام الأنشطة التفاعلية والوسائل البصرية والتكنولوجيا التعليمية لتعزيز اكتساب اللغة</span><span class="en-text">Using interactive activities, visual aids, and educational technology to enhance language acquisition</span></li>
+          <li><span class="ar-text">تقييم تقدم الطلاب وتقديم خطط دعم فردية لكل طالب</span><span class="en-text">Assessing students' progress and providing individualized support plans</span></li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div class="exp-school-name">
+            <div class="exp-school-dot" style="background:linear-gradient(135deg,#F59E0B,#FFD700);box-shadow:0 0 10px #F59E0B"></div>
+            <span class="ar-text">معلمة لغة عربية</span>
+            <span class="en-text">Arabic Language Teacher</span>
+          </div>
+          <span class="exp-date">2012 – 2025</span>
+        </div>
+        <div class="exp-loc">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="ar-text">مدرسة المخادة النموذجية الابتدائية – وزارة التربية والتعليم، الإسماعيلية، مصر</span>
+          <span class="en-text">Al-Makhada El-Namozagia Primary School – Ministry of Education, Ismailia, Egypt</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><span class="ar-text">تدريس اللغة العربية مع تطبيق التعليم المتمايز والممارسات الشاملة</span><span class="en-text">Teaching Arabic Language, implementing differentiated instruction and inclusive practices</span></li>
+          <li><span class="ar-text">تصميم برامج علاجية لأكثر من 60 طالباً يعانون من صعوبات القراءة بمعدل تحسن 70%</span><span class="en-text">Designed remedial programs for 60+ students with reading difficulties, achieving a 70% improvement rate</span></li>
+          <li><span class="ar-text">تصميم ألعاب إلكترونية تعليمية تفاعلية مرتبطة بسياق الحياة الواقعية للطلاب</span><span class="en-text">Designed interactive educational e-games connected to students' real-life context</span></li>
+          <li><span class="ar-text">تطوير تقييمات قائمة على التكنولوجيا حققت تحسناً في التحصيل الأكاديمي بنسبة 85%</span><span class="en-text">Developed technology-based assessments which enhanced academic achievement by 85%</span></li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div class="exp-school-name">
+            <div class="exp-school-dot" style="background:linear-gradient(135deg,#10B981,#2ECC8A);box-shadow:0 0 10px #10B981"></div>
+            <span class="ar-text">معلمة لغة عربية</span>
+            <span class="en-text">Arabic Language Teacher</span>
+          </div>
+          <span class="exp-date">2010 – 2012</span>
+        </div>
+        <div class="exp-loc">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="ar-text">المدرسة البريطانية للغات – مصر</span>
+          <span class="en-text">British School of Languages – Egypt</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><span class="ar-text">تدريس اللغة العربية للصفوف من 1 إلى 6 مع تحقيق تحسينات مستمرة في مهارات القراءة والكتابة</span><span class="en-text">Taught Arabic Language for Grades 1–6, achieving consistent literacy improvements across all levels</span></li>
+          <li><span class="ar-text">تصميم وتقديم دروس عربية عززت مهارات القراءة والكتابة لأكثر من 100 طالب في المرحلة الابتدائية سنوياً</span><span class="en-text">Designed and delivered Arabic lessons enhancing reading and writing skills for 100+ primary students annually</span></li>
+          <li><span class="ar-text">تطبيق التعليم المتمايز لطلاب ذوي الاحتياجات التعليمية الخاصة مع تحسين ملحوظ في المهارات اللغوية</span><span class="en-text">Applied differentiated instruction for SEN students, significantly improving reading and writing skills</span></li>
+          <li><span class="ar-text">دمج الأدوات الرقمية في الدروس مما أدى إلى رفع مشاركة الطلاب وفهمهم بنسبة 35%</span><span class="en-text">Integrated digital tools into lessons, raising student engagement and comprehension by 35%</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ══ SKILLS ══ -->
+    <div class="tab-panel" id="panel-skills">
+      <div class="sec-title c-yellow">
+        <span>⚡</span>
+        <span class="ar-text">المهارات المهنية</span>
+        <span class="en-text">Professional Skills</span>
+      </div>
+
+      <div class="skill-section">
+        <div class="skill-cat-head">
+          <div class="skill-cat-pip" style="background:linear-gradient(90deg,#6366F1,#818CF8)"></div>
+          <span class="ar-text">المهارات اللغوية والتربوية</span><span class="en-text">Linguistic & Pedagogical Skills</span>
+        </div>
+        <div class="badges-wrap">
+          <span class="badge br"><span class="ar-text">تدريس العربية لغير الناطقين بها</span><span class="en-text">Teaching Arabic as a 2nd Language</span></span>
+          <span class="badge br"><span class="ar-text">تطوير المناهج العربية</span><span class="en-text">Arabic Curriculum Development</span></span>
+          <span class="badge br"><span class="ar-text">التعليم الشامل والمتمايز</span><span class="en-text">Inclusive & Differentiated Instruction</span></span>
+          <span class="badge br"><span class="ar-text">تحسين أداء الطلاب</span><span class="en-text">Student Performance Improvement</span></span>
+          <span class="badge br"><span class="ar-text">دعم صعوبات القراءة والتعلم</span><span class="en-text">Reading & Learning Difficulties Support</span></span>
+          <span class="badge br"><span class="ar-text">تدريس الدراسات الإسلامية</span><span class="en-text">Islamic Studies Teaching</span></span>
+          <span class="badge br"><span class="ar-text">تنمية المهارات الأربع</span><span class="en-text">Four Language Skills Development</span></span>
+          <span class="badge br"><span class="ar-text">البرامج العلاجية</span><span class="en-text">Remedial Programs</span></span>
+        </div>
+      </div>
+
+      <div class="skill-section">
+        <div class="skill-cat-head">
+          <div class="skill-cat-pip" style="background:linear-gradient(90deg,#FFD700,#FFE566)"></div>
+          <span class="ar-text">التكنولوجيا والرقمنة التعليمية</span><span class="en-text">Educational Technology & Digitalization</span>
+        </div>
+        <div class="badges-wrap">
+          <span class="badge by"><span class="ar-text">دمج الذكاء الاصطناعي في التعليم</span><span class="en-text">AI Integration in Education</span></span>
+          <span class="badge by"><span class="ar-text">تصميم الألعاب التعليمية الإلكترونية</span><span class="en-text">Educational E-Game Design</span></span>
+          <span class="badge by"><span class="ar-text">منصات التعليم الإلكتروني</span><span class="en-text">E-Learning Platforms</span></span>
+          <span class="badge by"><span class="ar-text">التقييمات الرقمية</span><span class="en-text">Digital Assessments</span></span>
+          <span class="badge by"><span class="ar-text">التحول الرقمي</span><span class="en-text">Digital Transformation</span></span>
+          <span class="badge by"><span class="ar-text">ICDL</span><span class="en-text">ICDL</span></span>
+        </div>
+      </div>
+
+      <div class="skill-section">
+        <div class="skill-cat-head">
+          <div class="skill-cat-pip" style="background:linear-gradient(90deg,#2ECC8A,#6EE7B7)"></div>
+          <span class="ar-text">التدريب والقيادة</span><span class="en-text">Training & Leadership</span>
+        </div>
+        <div class="badges-wrap">
+          <span class="badge bg"><span class="ar-text">تدريب المعلمين (TOT)</span><span class="en-text">Teacher Training (TOT)</span></span>
+          <span class="badge bg"><span class="ar-text">التطوير البشري</span><span class="en-text">Human Development</span></span>
+          <span class="badge bg"><span class="ar-text">قيادة المرأة</span><span class="en-text">Women's Leadership</span></span>
+          <span class="badge bg"><span class="ar-text">الإعلام والتقديم</span><span class="en-text">Media Presentation</span></span>
+          <span class="badge bg"><span class="ar-text">إدارة الصف الدراسي</span><span class="en-text">Classroom Management</span></span>
+          <span class="badge bg"><span class="ar-text">التخطيط الاستراتيجي</span><span class="en-text">Strategic Planning</span></span>
+        </div>
+      </div>
+
+      <div class="skill-section">
+        <div class="skill-cat-head">
+          <div class="skill-cat-pip" style="background:linear-gradient(90deg,#FF8C00,#FFB347)"></div>
+          <span class="ar-text">المهارات الشخصية</span><span class="en-text">Soft Skills</span>
+        </div>
+        <div class="badges-wrap">
+          <span class="badge bo"><span class="ar-text">التواصل الفعّال</span><span class="en-text">Effective Communication</span></span>
+          <span class="badge bo"><span class="ar-text">الإبداع والابتكار</span><span class="en-text">Creativity & Innovation</span></span>
+          <span class="badge bo"><span class="ar-text">التكيف مع البيئات المتنوعة</span><span class="en-text">Multicultural Adaptability</span></span>
+          <span class="badge bo"><span class="ar-text">العمل الجماعي</span><span class="en-text">Team Collaboration</span></span>
+          <span class="badge bo"><span class="ar-text">القيادة والتأثير</span><span class="en-text">Leadership & Influence</span></span>
+          <span class="badge bo"><span class="ar-text">إدارة الوقت</span><span class="en-text">Time Management</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CERTIFICATES ══ -->
+    <div class="tab-panel" id="panel-courses">
+      <div class="sec-title c-green">
+        <span>🏅</span>
+        <span class="ar-text">الشهادات والبرامج المهنية</span>
+        <span class="en-text">Certificates & Professional Programs</span>
+      </div>
+
+      <div class="courses-list">
+        <div class="c-item"><div class="c-num">1</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">مدرب معتمد (TOT)</span><span class="en-text">Certified Trainer (TOT)</span></div>
+          <div class="c-org"><span class="ar-text">الأكاديمية المهنية للمعلمين – 2023</span><span class="en-text">Professional Academy for Teachers – 2023</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">2</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">برنامج سفراء الذكاء الاصطناعي</span><span class="en-text">AI Ambassadors Program</span></div>
+          <div class="c-org"><span class="ar-text">المركز القومي لتكنولوجيا المعلومات NTI – 2025</span><span class="en-text">National Telecom Institute (NTI) – 2025</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">3</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">برنامج المعلم الرقمي</span><span class="en-text">Digital Teacher Program</span></div>
+          <div class="c-org"><span class="ar-text">الاتحاد العربي للتدريب – 2024</span><span class="en-text">Arab Union for Training – 2024</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">4</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">مدرب التطوير البشري المتقدم</span><span class="en-text">Advanced Human Development Trainer</span></div>
+          <div class="c-org"><span class="ar-text">الاتحاد العربي للتدريب</span><span class="en-text">Arab Union for Training</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">5</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">التحول الرقمي</span><span class="en-text">Digital Transformation</span></div>
+          <div class="c-org"><span class="ar-text">جامعة قناة السويس – 2023</span><span class="en-text">Suez Canal University – 2023</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">6</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">برنامج المرأة القائدة</span><span class="en-text">Women Lead Program Graduate</span></div>
+          <div class="c-org"><span class="ar-text">الأكاديمية الوطنية للتدريب – 2023</span><span class="en-text">National Training Academy – 2023</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">7</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">ورشة الدراسات الاستراتيجية والأمن القومي</span><span class="en-text">Strategic Studies & National Security Workshop</span></div>
+          <div class="c-org"><span class="ar-text">مجلس التدريب الوطني – 2023</span><span class="en-text">National Training Council – 2023</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">8</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">دورة المقدم الإعلامي المحترف</span><span class="en-text">Professional Media Presenter Course</span></div>
+          <div class="c-org"><span class="ar-text">N.Media</span><span class="en-text">N.Media</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">9</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">برنامج مسار القيادة</span><span class="en-text">Path to Leadership Program</span></div>
+          <div class="c-org"><span class="ar-text">وزارة الشباب والرياضة</span><span class="en-text">Ministry of Youth & Sports</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">10</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">برنامج مؤهل العمل الحر</span><span class="en-text">Freelancing Qualification Program</span></div>
+          <div class="c-org"><span class="ar-text">وزارة الاتصالات</span><span class="en-text">Ministry of Communications</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">11</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">رخصة الحاسب الآلي الدولية ICDL</span><span class="en-text">International Computer Driving Licence (ICDL)</span></div>
+          <div class="c-org"><span class="ar-text">2015</span><span class="en-text">2015</span></div>
+        </div></div>
+
+        <div class="c-item"><div class="c-num">12</div><div class="c-body">
+          <div class="c-name"><span class="ar-text">دراسات TOEFL</span><span class="en-text">TOEFL Studies</span></div>
+          <div class="c-org"><span class="ar-text">جامعة قناة السويس</span><span class="en-text">Suez Canal University</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ══ EDUCATION ══ -->
+    <div class="tab-panel" id="panel-education">
+      <div class="sec-title c-orange">
+        <span>🏛️</span>
+        <span class="ar-text">المؤهلات الأكاديمية</span>
+        <span class="en-text">Academic Qualifications</span>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-deg"><span class="ar-text">دبلوم خاص في المناهج وطرق التدريس</span><span class="en-text">Special Diploma in Curriculum & Teaching Methods</span></div>
+        <div class="edu-uni"><span class="ar-text">جامعة قناة السويس – 2024</span><span class="en-text">Suez Canal University – 2024</span></div>
+        <span class="edu-tag">🎓 <span class="ar-text">المناهج وطرق التدريس</span><span class="en-text">Curriculum & Teaching Methods</span></span>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-deg"><span class="ar-text">دبلومات مهنية ومتخصصة – المناهج وطرق التدريس</span><span class="en-text">Professional & Specialized Diplomas – Curriculum & Teaching Methods</span></div>
+        <div class="edu-uni"><span class="ar-text">جامعة قناة السويس</span><span class="en-text">Suez Canal University</span></div>
+        <span class="edu-tag">📋 <span class="ar-text">دبلومات مهنية</span><span class="en-text">Professional Diplomas</span></span>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-deg"><span class="ar-text">بكالوريوس التربية – اللغة العربية</span><span class="en-text">Bachelor of Education – Arabic Language</span></div>
+        <div class="edu-uni"><span class="ar-text">2010</span><span class="en-text">2010</span></div>
+        <span class="edu-tag">🎓 <span class="ar-text">تربية – لغة عربية</span><span class="en-text">Education – Arabic Language</span></span>
+      </div>
+
+      <div style="background:linear-gradient(145deg,rgba(99,102,241,.08),rgba(139,92,246,.04));border:1px solid rgba(99,102,241,.28);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;transition:all .3s;">
+        <span style="font-size:2.6rem;margin-bottom:10px;display:block;animation:floatIcon 3s ease-in-out infinite">📚</span>
+        <div style="font-size:1.05rem;font-weight:800;background:linear-gradient(135deg,#FF8C00,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">
+          <span class="ar-text">خبرة تدريسية متنوعة وواسعة</span><span class="en-text">Diverse & Extensive Teaching Experience</span>
+        </div>
+        <div style="font-size:.83rem;color:var(--text-muted)">
+          <span class="ar-text">أكثر من 15 سنة في تدريس اللغة العربية – الإمارات ومصر</span><span class="en-text">Over 15 years teaching Arabic Language – UAE & Egypt</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ LANGUAGES & EXTRA ══ -->
+    <div class="tab-panel" id="panel-extra">
+      <div class="sec-title c-pink">
+        <span>🌍</span>
+        <span class="ar-text">اللغات</span><span class="en-text">Languages</span>
+      </div>
+
+      <div class="lang-block">
+        <div class="lang-row">
+          <div class="lang-top">
+            <span class="lang-name"><span class="ar-text">🌙 العربية</span><span class="en-text">🌙 Arabic</span></span>
+            <span class="lang-lvl lvl-native"><span class="ar-text">لغة أم</span><span class="en-text">Native</span></span>
+          </div>
+          <div class="lang-track"><div class="lang-fill lf-red" style="width:100%"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-top">
+            <span class="lang-name"><span class="ar-text">🌐 الإنجليزية</span><span class="en-text">🌐 English</span></span>
+            <span class="lang-lvl lvl-good"><span class="ar-text">ممتاز (احترافي)</span><span class="en-text">Excellent (Professional)</span></span>
+          </div>
+          <div class="lang-track"><div class="lang-fill lf-green" style="width:90%"></div></div>
+        </div>
+      </div>
+
+      <div class="sec-title c-pink" style="margin-top:4px">
+        <span>❤️</span>
+        <span class="ar-text">الاهتمامات والهوايات</span><span class="en-text">Interests & Hobbies</span>
+      </div>
+      <div class="interests-grid">
+        <div class="interest-card"><span class="interest-icon">🤖</span><div class="interest-name"><span class="ar-text">الذكاء الاصطناعي</span><span class="en-text">Artificial Intelligence</span></div></div>
+        <div class="interest-card"><span class="interest-icon">📚</span><div class="interest-name"><span class="ar-text">القراءة والبحث</span><span class="en-text">Reading & Research</span></div></div>
+        <div class="interest-card"><span class="interest-icon">💡</span><div class="interest-name"><span class="ar-text">الابتكار التعليمي</span><span class="en-text">Educational Innovation</span></div></div>
+        <div class="interest-card"><span class="interest-icon">🌟</span><div class="interest-name"><span class="ar-text">تطوير الذات</span><span class="en-text">Self Development</span></div></div>
+        <div class="interest-card"><span class="interest-icon">🎓</span><div class="interest-name"><span class="ar-text">تدريب المعلمين</span><span class="en-text">Teacher Training</span></div></div>
+        <div class="interest-card"><span class="interest-icon">✈️</span><div class="interest-name"><span class="ar-text">السفر والثقافات</span><span class="en-text">Travel & Culture</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="cv-footer">
+  علياء رأفت سليمان &nbsp;<span>·</span>&nbsp; معلمة لغة عربية &nbsp;<span>·</span>&nbsp; Aliaa Rafaat Soliman &nbsp;<span>·</span>&nbsp; Arabic Teacher &nbsp;<span>·</span>&nbsp; UAE &nbsp;<span>·</span>&nbsp; 2026
+</div>
+</div>
+
+<script>
+(function(){
+  const c=document.getElementById('particles'),N=90;
+  const cols=['#6366F1','#8B5CF6','#06B6D4','#10B981','#F59E0B','#fff','#A78BFA'];
+  for(let i=0;i<N;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2.8+0.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;background:${cols[Math.floor(Math.random()*cols.length)]};top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${(Math.random()*5+2).toFixed(1)}s;--delay:${(Math.random()*6).toFixed(1)}s;`;
+    c.appendChild(s);
+  }
+})();
+
+function toggleLang(){
+  const b=document.body;
+  if(b.classList.contains('ar')){b.classList.replace('ar','en');b.setAttribute('lang','en');b.setAttribute('dir','ltr')}
+  else{b.classList.replace('en','ar');b.setAttribute('lang','ar');b.setAttribute('dir','rtl')}
+}
+
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+tab));
+  document.getElementById('tabsBody').dataset.active=tab;
+}
+
+const style=document.createElement('style');
+style.textContent='@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}';
+document.head.appendChild(style);
+</script>
+</body>
+</html>
